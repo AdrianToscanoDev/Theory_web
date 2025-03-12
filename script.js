@@ -1,27 +1,27 @@
-// array of image paths
-const images = [
-    "images/chords/root_position/major/a_major.png",
-    'images/chords/root_position/major/a_sharp_major.png',
-    'images/chords/root_position/major/b_major.png',
-    'images/chords/root_position/major/c_major.png',
-];
+// const chord_filepaths_root = [
+//     "images/chords/root_position/major/a_major.png",
+//     'images/chords/root_position/major/a_sharp_major.png',
+//     'images/chords/root_position/major/b_major.png',
+//     'images/chords/root_position/major/c_major.png',
+// ];
 
-// generate random image
+// generates random chord image
 function generateRandomChordImage() {
-     
-    const randomIndex = Math.floor(Math.random() * images.length); // Select a random index
-    const randomChord = images[randomIndex]; // Get the random image from the array
+    
+    const randomIndex = Math.floor(Math.random() * chord_filepaths_root.length); // Select a random index
+    const randomChord = chord_filepaths_root[randomIndex]; // Get the random image from the array
     document.getElementById('pianoImage').src = randomChord; // Update the image src 
     
+    let correctAnswer = randomChord.split('/').pop();
+    return correctAnswer;
 }
 
 // updates multiple choice answers
-function generateMultipleChoice() {
+function generateMultipleChoice(correctAnswer) {
     
-    // get the correct chord string. (the one that corresponds to the chord being displayed)
+    // get 3 more random chord names
+    const randomIndex = Math.floor(Math.random() * chord_filepaths_root.length);
 
-
-    // get 3 random chord names
 
     // randomly add them to the 4 spots
 
@@ -41,9 +41,9 @@ function generateMultipleChoice() {
 // generates the new question
 function loadNewQuestion() {
 
-    // generate random chord image
-    generateRandomChordImage()
+    // generate random chord image and get the correct answer
+    const correctAnswer = generateRandomChordImage();
 
     // generate multiple choice answers
-    generateMultipleChoice();
+    generateMultipleChoice(correctAnswer);
 }

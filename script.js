@@ -15,8 +15,24 @@ function generateRandomImage() {
     
 }
 
-// populates the multiple choice answers
+// updates multiple choice answers
 function generateMultipleChoice() {
-    let button = document.getElementById('choice1');
-    button.textContent = 'a';
+    
+    // 
+
+    let choice1 = document.getElementById('choice1');
+    choice1.textContent = '1';
+
+    let choice2 = document.getElementById('choice2');
+    choice2.textContent = '2';
+
+    let choice3 = document.getElementById('choice3');
+    choice3.textContent = '3';
+
+    let choice4 = document.getElementById('choice4');
+    choice4.textContent = '4';
+}
+
+function testLoad() {
+    generateMultipleChoice();
 }

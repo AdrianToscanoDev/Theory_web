@@ -14,3 +14,9 @@ function generateRandomImage() {
     document.getElementById('randomImage').src = randomImage; // Update the image src 
     
 }
+
+// populates the multiple choice answers
+function generateMultipleChoice() {
+    let button = document.getElementById('choice1');
+    button.textContent = 'a';
+}

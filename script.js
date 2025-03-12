@@ -8,25 +8,9 @@ const images = [
 
 // generate random image
 function generateRandomImage() {
-
-    // do this while our updated image source is the same name as the current image source name
-    do {
-
-        // get current image source 
-        const currImageSource = document.getElementById('randomImage').src
-
-        // get new image 
-        const randomIndex = Math.floor(Math.random() * images.length);
-        const newImageSource = images[randomIndex];
-
-    } while (currImageSource === newImageSource);
-
-    // assign the newImageSource 
-    document.getElementById('randomImage').src = newImageSource;
-
-    /*
+     
     const randomIndex = Math.floor(Math.random() * images.length); // Select a random index
     const randomImage = images[randomIndex]; // Get the random image from the array
     document.getElementById('randomImage').src = randomImage; // Update the image src 
-    */
+    
 }

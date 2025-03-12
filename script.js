@@ -7,18 +7,23 @@ const images = [
 ];
 
 // generate random image
-function generateRandomImage() {
+function generateRandomChordImage() {
      
     const randomIndex = Math.floor(Math.random() * images.length); // Select a random index
-    const randomImage = images[randomIndex]; // Get the random image from the array
-    document.getElementById('randomImage').src = randomImage; // Update the image src 
+    const randomChord = images[randomIndex]; // Get the random image from the array
+    document.getElementById('pianoImage').src = randomChord; // Update the image src 
     
 }
 
 // updates multiple choice answers
 function generateMultipleChoice() {
     
-    // 
+    // get the correct chord string. (the one that corresponds to the chord being displayed)
+
+
+    // get 3 random chord names
+
+    // randomly add them to the 4 spots
 
     let choice1 = document.getElementById('choice1');
     choice1.textContent = '1';
@@ -33,6 +38,12 @@ function generateMultipleChoice() {
     choice4.textContent = '4';
 }
 
-function testLoad() {
+// generates the new question
+function loadNewQuestion() {
+
+    // generate random chord image
+    generateRandomChordImage()
+
+    // generate multiple choice answers
     generateMultipleChoice();
 }

@@ -31,7 +31,7 @@ const chord_filepaths_root = [
 ];
 
 // THIS IS ALSO BEING MOVED EVENTUALLY. 
-// THIS IS A MAP SO THAT I CAN USE THE FILENAME TO SEARCH FOR THE CHORDS NAME
+// THIS IS A MAP SO THAT I CAN USE THE FILENAME TO SEARCH FOR THE CHORDS NAME TO DISPLAY IN THE APP. aka - "A Major" instead of "a_major.png"
 let chords = new Map();
 // root position major
 chords.set("a_major.png",           "A Major");
@@ -139,4 +139,85 @@ function generateMultipleChoice(correctAnswerIndex) {
 
     let choice4 = document.getElementById('choice4');
     choice4.textContent = names[3];
+}
+
+// checks if choice1 is correct answer 
+function choice1Check() {
+    const choice = document.getElementById("choice1");
+    
+    // if button hasnt been chosen, disable it if wrong answer
+    if (!choice.disabled) {
+        
+        if(!isCorrect("choice1")) {
+            choice.disabled = true;
+        }
+        else {
+            correctAnswer()
+        }
+
+    }
+}
+
+// checks if choice2 is correct answer 
+function choice2Check() {
+    const choice = document.getElementById("choice2");
+    
+    // if button hasnt been chosen, disable it if wrong answer
+    if (!choice.disabled) {
+        
+        if(!isCorrect("choice2")) {
+            choice.disabled = true;
+        }
+        else {
+            correctAnswer()
+        }
+
+    }    
+}
+
+// checks if choice3 is correct answer 
+function choice3Check() {
+    const choice = document.getElementById("choice3");
+    
+    // if button hasnt been chosen, disable it if wrong answer
+    if (!choice.disabled) {
+        
+        if(!isCorrect("choice3")) {
+            choice.disabled = true;
+        }
+        else {
+            correctAnswer()
+        }
+
+    }
+}
+
+// checks if choice4 is correct answer 
+function choice4Check() {
+    const choice = document.getElementById("choice4");
+    
+    // if button hasnt been chosen, disable it if wrong answer
+    if (!choice.disabled) {
+        
+        if(!isCorrect("choice4")) {
+            choice.disabled = true;
+        }
+        else {
+            correctAnswer()
+        }
+
+    }
+}
+
+// when a button is clicked, checks to see if the correct answer was chosen
+function isCorrect(buttonID) {
+    
+}
+
+// do some sort of animation or something when answer is correct
+function correctAnswer() {
+    // for now, turn the button green,
+    // display "correct" message 
+    // wait a few seconds, 
+    // run loadNewQuestion()
 }

@@ -1,9 +1,33 @@
 // holds file paths for piano images. 
+// THIS ARRAY SHOULD EVENTUALLY BE MOVED TO ITS OWN FILE. as of right now, code breaks when i move it. the filepath isnt found 
 const chord_filepaths_root = [
+    // major chords
     "images/chords/root_position/major/a_major.png",
     'images/chords/root_position/major/a_sharp_major.png',
     'images/chords/root_position/major/b_major.png',
     'images/chords/root_position/major/c_major.png',
+    'images/chords/root_position/major/c_sharp_major.png',
+    'images/chords/root_position/major/d_major.png',
+    'images/chords/root_position/major/d_sharp_major.png',
+    'images/chords/root_position/major/e_major.png',
+    'images/chords/root_position/major/f_major.png',
+    'images/chords/root_position/major/f_sharp_major.png',
+    'images/chords/root_position/major/g_major.png',
+    'images/chords/root_position/major/g_sharp_major.png',
+
+    // minor chords
+    'images/chords/root_position/minor/a_minor.png',
+    'images/chords/root_position/minor/a_sharp_minor.png',
+    'images/chords/root_position/minor/b_minor.png',
+    'images/chords/root_position/minor/c_minor.png',
+    'images/chords/root_position/minor/c_sharp_minor.png',
+    'images/chords/root_position/minor/d_minor.png',
+    'images/chords/root_position/minor/d_sharp_minor.png',
+    'images/chords/root_position/minor/e_minor.png',
+    'images/chords/root_position/minor/f_minor.png',
+    'images/chords/root_position/minor/f_sharp_minor.png',
+    'images/chords/root_position/minor/g_minor.png',
+    'images/chords/root_position/minor/g_sharp_minor.png',
 ];
 
 // generates random chord image

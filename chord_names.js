@@ -27,8 +27,31 @@
 
 
 let chords = new Map();
-chords.set("c_major.png", "C Major");
-chords.set("c_minor.png", "C Minor");
-chords.set("c_sharp_major.png", "C# Major");
-chords.set("c_sharp_minor.png", "C# Minor");
-chords.set("d_major.png", "D Major");
+
+// root position major
+chords.set("a_major.png",           "A Major");
+chords.set("a_sharp_major.png",     "A# Major");
+chords.set("b_major.png",           "B Major");
+chords.set("c_major.png",           "C Major");
+chords.set("c_sharp_major.png",     "C# Major");
+chords.set("d_major.png",           "D Major");
+chords.set("d_sharp_major.png",     "D# Major");
+chords.set("e_major.png",           "E Major");
+chords.set("f_major.png",           "F Major");
+chords.set("f_sharp_major.png",     "F# Major");
+chords.set("g_major.png",           "G Major");
+chords.set("g_sharp_major.png",     "G# Major");
+
+// root position minor
+chords.set("a_minor.png",           "A Minor");
+chords.set("a_sharp_minor.png",     "A# Minor");
+chords.set("b_minor.png",           "B Minor");
+chords.set("c_minor.png",           "C Minor");
+chords.set("c_sharp_minor.png",     "C# Minor");
+chords.set("d_minor.png",           "D Minor");
+chords.set("d_sharp_minor.png",     "D# Minor");
+chords.set("e_minor.png",           "E Minor");
+chords.set("f_minor.png",           "F Minor");
+chords.set("f_sharp_minor.png",     "F# Minor");
+chords.set("g_minor.png",           "G Minor");
+chords.set("g_sharp_minor.png",     "G# Minor");

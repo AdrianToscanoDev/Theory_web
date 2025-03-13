@@ -30,7 +30,40 @@ const chord_filepaths_root = [
     'images/chords/root_position/minor/g_sharp_minor.png',
 ];
 
-// generates random chord image
+// THIS IS ALSO BEING MOVED EVENTUALLY. 
+// THIS IS A MAP SO THAT I CAN USE THE FILENAME TO SEARCH FOR THE CHORDS NAME
+let chords = new Map();
+// root position major
+chords.set("a_major.png",           "A Major");
+chords.set("a_sharp_major.png",     "A# Major");
+chords.set("b_major.png",           "B Major");
+chords.set("c_major.png",           "C Major");
+chords.set("c_sharp_major.png",     "C# Major");
+chords.set("d_major.png",           "D Major");
+chords.set("d_sharp_major.png",     "D# Major");
+chords.set("e_major.png",           "E Major");
+chords.set("f_major.png",           "F Major");
+chords.set("f_sharp_major.png",     "F# Major");
+chords.set("g_major.png",           "G Major");
+chords.set("g_sharp_major.png",     "G# Major");
+// root position minor
+chords.set("a_minor.png",           "A Minor");
+chords.set("a_sharp_minor.png",     "A# Minor");
+chords.set("b_minor.png",           "B Minor");
+chords.set("c_minor.png",           "C Minor");
+chords.set("c_sharp_minor.png",     "C# Minor");
+chords.set("d_minor.png",           "D Minor");
+chords.set("d_sharp_minor.png",     "D# Minor");
+chords.set("e_minor.png",           "E Minor");
+chords.set("f_minor.png",           "F Minor");
+chords.set("f_sharp_minor.png",     "F# Minor");
+chords.set("g_minor.png",           "G Minor");
+chords.set("g_sharp_minor.png",     "G# Minor");
+
+
+/*EVERYTHING ABOVE THIS SHOULD BE MOVED TO A DIFFERENT FILE ********************************************************************************************************* */
+
+// generates random chord image and displays it on the page
 function generateRandomChordImage() {
     
     const randomIndex = Math.floor(Math.random() * chord_filepaths_root.length); // Select a random index
@@ -68,20 +101,28 @@ function generateMultipleChoice(correctAnswerIndex) {
       [multipleChoices[i], multipleChoices[j]] = [multipleChoices[j], multipleChoices[i]];
     }
 
-    // at this point we have the indexes. access the chord file paths to get the names of the chord
+    // at this point we have the indexes. 
+    // access the chord file paths to get the names of the chord
+    let names = []; 
+    for (let i = 0; i < 4; i++) {
+        
+        let key = chord_filepaths_root[multipleChoices[i]].split("/").pop();
+        let chordName = chords.get(key);
+        names.push(chordName);
+    }
 
     // then assign the answers in the order of the shuffled array
     let choice1 = document.getElementById('choice1');
-    choice1.textContent = multipleChoices[0];
+    choice1.textContent = names[0];
 
     let choice2 = document.getElementById('choice2');
-    choice2.textContent = multipleChoices[1];
+    choice2.textContent = names[1];
 
     let choice3 = document.getElementById('choice3');
-    choice3.textContent = multipleChoices[2];
+    choice3.textContent = names[2];
 
     let choice4 = document.getElementById('choice4');
-    choice4.textContent = multipleChoices[3];
+    choice4.textContent = names[3];
 }
 
 // generates the new question

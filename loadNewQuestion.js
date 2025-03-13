@@ -63,6 +63,21 @@ chords.set("g_sharp_minor.png",     "G# Minor");
 
 /*EVERYTHING ABOVE THIS SHOULD BE MOVED TO A DIFFERENT FILE ********************************************************************************************************* */
 
+// runs when the practice chord page is reached. 
+document.addEventListener("DOMContentLoaded", function() {
+    loadNewQuestion();
+});
+
+// generates the new question
+function loadNewQuestion() {
+
+    // generate random chord image and get the correct answer
+    const correctAnswer = generateRandomChordImage();
+
+    // generate multiple choice answers
+    generateMultipleChoice(correctAnswer);
+}
+
 // generates random chord image and displays it on the page
 function generateRandomChordImage() {
     
@@ -124,14 +139,4 @@ function generateMultipleChoice(correctAnswerIndex) {
 
     let choice4 = document.getElementById('choice4');
     choice4.textContent = names[3];
-}
-
-// generates the new question
-function loadNewQuestion() {
-
-    // generate random chord image and get the correct answer
-    const correctAnswer = generateRandomChordImage();
-
-    // generate multiple choice answers
-    generateMultipleChoice(correctAnswer);
 }

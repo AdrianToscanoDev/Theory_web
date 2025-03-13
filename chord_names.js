@@ -24,3 +24,11 @@
 //     "b_major",
 //     "b_minor"
 // ];
+
+
+let chords = new Map();
+chords.set("c_major.png", "C Major");
+chords.set("c_minor.png", "C Minor");
+chords.set("c_sharp_major.png", "C# Major");
+chords.set("c_sharp_minor.png", "C# Minor");
+chords.set("d_major.png", "D Major");

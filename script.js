@@ -102,10 +102,11 @@ function generateMultipleChoice(correctAnswerIndex) {
     }
 
     // at this point we have the indexes. 
-    // access the chord file paths to get the names of the chord
+    // now we access the file paths to get the names of the chord
     let names = []; 
     for (let i = 0; i < 4; i++) {
         
+        // gets the name of the end of the filepath. eg, "a_minor.png". uses that to get "A Minor"
         let key = chord_filepaths_root[multipleChoices[i]].split("/").pop();
         let chordName = chords.get(key);
         names.push(chordName);

@@ -15,8 +15,25 @@
 
         <!--piano image -->
         <div>
-            <img id="randomImage" src="images\empty_piano.png" alt="Random Image" />
-            <button onclick="generateRandomImage()">Generate Image</button>
+            <img id="pianoImage" src="images\empty_piano.png" alt="Piano Image" />
+        </div>
+        
+        <!-- DEVELOPMENT TEST BUTTON-->
+        <button onclick="generateRandomChordImage()">Generate Image</button>
+
+        <!--Loads chord image and multiple choices-->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            loadNewQuestion();
+        });
+        </script>
+
+        <!--multiple choice answers-->
+        <div>
+            <button id="choice1">choice1</button>
+            <button id="choice2">choice2</button>
+            <button id="choice3">choice3</button>
+            <button id="choice4">choice4</button>
         </div>
         
         <a href="index.html">

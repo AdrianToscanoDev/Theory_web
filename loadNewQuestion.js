@@ -31,7 +31,7 @@ const chord_filepaths_root = [
 ];
 
 // THIS IS ALSO BEING MOVED EVENTUALLY. 
-// THIS IS A MAP SO THAT I CAN USE THE FILENAME TO SEARCH FOR THE CHORDS NAME
+// THIS IS A MAP SO THAT I CAN USE THE FILENAME TO SEARCH FOR THE CHORDS NAME TO DISPLAY IN THE APP. aka - "A Major" instead of "a_major.png"
 let chords = new Map();
 // root position major
 chords.set("a_major.png",           "A Major");
@@ -62,6 +62,21 @@ chords.set("g_sharp_minor.png",     "G# Minor");
 
 
 /*EVERYTHING ABOVE THIS SHOULD BE MOVED TO A DIFFERENT FILE ********************************************************************************************************* */
+
+// runs when the practice chord page is reached. 
+document.addEventListener("DOMContentLoaded", function() {
+    loadNewQuestion();
+});
+
+// generates the new question
+function loadNewQuestion() {
+
+    // generate random chord image and get the correct answer
+    const correctAnswerIndex = generateRandomChordImage();
+
+    // generate multiple choice answers
+    generateMultipleChoice(correctAnswerIndex);
+}
 
 // generates random chord image and displays it on the page
 function generateRandomChordImage() {
@@ -102,10 +117,11 @@ function generateMultipleChoice(correctAnswerIndex) {
     }
 
     // at this point we have the indexes. 
-    // access the chord file paths to get the names of the chord
+    // now we access the file paths to get the names of the chord
     let names = []; 
     for (let i = 0; i < 4; i++) {
         
+        // gets the name of the end of the filepath. eg, uses "a_minor.png" to get "A Minor"
         let key = chord_filepaths_root[multipleChoices[i]].split("/").pop();
         let chordName = chords.get(key);
         names.push(chordName);
@@ -125,12 +141,83 @@ function generateMultipleChoice(correctAnswerIndex) {
     choice4.textContent = names[3];
 }
 
-// generates the new question
-function loadNewQuestion() {
+// checks if choice1 is correct answer 
+function choice1Check() {
+    const choice = document.getElementById("choice1");
+    
+    // if button hasnt been chosen, disable it if wrong answer
+    if (!choice.disabled) {
+        
+        if(!isCorrect("choice1")) {
+            choice.disabled = true;
+        }
+        else {
+            correctAnswer()
+        }
 
-    // generate random chord image and get the correct answer
-    const correctAnswer = generateRandomChordImage();
+    }
+}
 
-    // generate multiple choice answers
-    generateMultipleChoice(correctAnswer);
+// checks if choice2 is correct answer 
+function choice2Check() {
+    const choice = document.getElementById("choice2");
+    
+    // if button hasnt been chosen, disable it if wrong answer
+    if (!choice.disabled) {
+        
+        if(!isCorrect("choice2")) {
+            choice.disabled = true;
+        }
+        else {
+            correctAnswer()
+        }
+
+    }    
+}
+
+// checks if choice3 is correct answer 
+function choice3Check() {
+    const choice = document.getElementById("choice3");
+    
+    // if button hasnt been chosen, disable it if wrong answer
+    if (!choice.disabled) {
+        
+        if(!isCorrect("choice3")) {
+            choice.disabled = true;
+        }
+        else {
+            correctAnswer()
+        }
+
+    }
+}
+
+// checks if choice4 is correct answer 
+function choice4Check() {
+    const choice = document.getElementById("choice4");
+    
+    // if button hasnt been chosen, disable it if wrong answer
+    if (!choice.disabled) {
+        
+        if(!isCorrect("choice4")) {
+            choice.disabled = true;
+        }
+        else {
+            correctAnswer()
+        }
+
+    }
+}
+
+// when a button is clicked, checks to see if the correct answer was chosen
+function isCorrect(buttonID) {
+    
+}
+
+// do some sort of animation or something when answer is correct
+function correctAnswer() {
+    // for now, turn the button green,
+    // display "correct" message 
+    // wait a few seconds, 
+    // run loadNewQuestion()
 }

@@ -8,7 +8,6 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
     </head>
 
     <body>
@@ -17,29 +16,19 @@
         <div>
             <img id="pianoImage" src="images\empty_piano.png" alt="Piano Image" />
         </div>
-        
-        <!-- DEVELOPMENT TEST BUTTON-->
-        <button onclick="generateRandomChordImage()">Generate Image</button>
-
-        <!--Loads chord image and multiple choices-->
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-            loadNewQuestion();
-        });
-        </script>
 
         <!--multiple choice answers-->
         <div>
-            <button id="choice1">choice1</button>
-            <button id="choice2">choice2</button>
-            <button id="choice3">choice3</button>
-            <button id="choice4">choice4</button>
+            <button id="choice1" onclick="choice1Check()"> </button>
+            <button id="choice2" onclick="choice2Check()"> </button>
+            <button id="choice3" onclick="choice3Check()"> </button>
+            <button id="choice4" onclick="choice4Check()"> </button>
         </div>
         
         <a href="index.html">
             <button>Home</button>
         </a>
         
-        <script src="" async defer></script>
+        <script src="loadNewQuestion.js"></script>
     </body>
 </html>

@@ -160,7 +160,6 @@ function generateMultipleChoice(correctAnswerIndex) {
 function isCorrect(buttonID) {
     const userChoice = document.getElementById(buttonID);
 
-    // if user choice === right answer, then run correct answer
     if (buttonID === question.rightAnswer){
         correctAnswer();
     }
@@ -178,5 +177,13 @@ function correctAnswer() {
     // wait a few seconds, 
     // run loadNewQuestion()
     alert("correct! :)");
+    resetButtons();
     loadNewQuestion();
+}
+
+function resetButtons() {
+    document.getElementById("choice1").disabled = false;
+    document.getElementById("choice2").disabled = false;
+    document.getElementById("choice3").disabled = false;
+    document.getElementById("choice4").disabled = false;
 }

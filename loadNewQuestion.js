@@ -72,10 +72,10 @@ document.addEventListener("DOMContentLoaded", function() {
 function loadNewQuestion() {
 
     // generate random chord image and get the correct answer
-    const correctAnswer = generateRandomChordImage();
+    const correctAnswerIndex = generateRandomChordImage();
 
     // generate multiple choice answers
-    generateMultipleChoice(correctAnswer);
+    generateMultipleChoice(correctAnswerIndex);
 }
 
 // generates random chord image and displays it on the page
@@ -121,7 +121,7 @@ function generateMultipleChoice(correctAnswerIndex) {
     let names = []; 
     for (let i = 0; i < 4; i++) {
         
-        // gets the name of the end of the filepath. eg, "a_minor.png". uses that to get "A Minor"
+        // gets the name of the end of the filepath. eg, uses "a_minor.png" to get "A Minor"
         let key = chord_filepaths_root[multipleChoices[i]].split("/").pop();
         let chordName = chords.get(key);
         names.push(chordName);

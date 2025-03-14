@@ -93,7 +93,8 @@ function generateRandomChordImage() {
     
     // save path and correct answer in the question object
     question.setImagePath(randomChord); 
-    question.setCorrectAnswerIndex(randomIndex); 
+    question.setCorrectAnswerIndex(randomIndex);
+    question.setCorrectAnswerChordName();
 }
 
 // updates multiple choice answers
@@ -155,77 +156,19 @@ function generateMultipleChoice(correctAnswerIndex) {
     question.setRightAnswer()
 }
 
-// checks if choice1 is correct answer 
-function choice1Check() {
-    const choice = document.getElementById("choice1");
-    
-    // if button hasnt been chosen, disable it if wrong answer
-    if (!choice.disabled) {
-        
-        if(!isCorrect("choice1")) {
-            choice.disabled = true;
-        }
-        else {
-            correctAnswer()
-        }
-
-    }
-}
-
-// checks if choice2 is correct answer 
-function choice2Check() {
-    const choice = document.getElementById("choice2");
-    
-    // if button hasnt been chosen, disable it if wrong answer
-    if (!choice.disabled) {
-        
-        if(!isCorrect("choice2")) {
-            choice.disabled = true;
-        }
-        else {
-            correctAnswer()
-        }
-
-    }    
-}
-
-// checks if choice3 is correct answer 
-function choice3Check() {
-    const choice = document.getElementById("choice3");
-    
-    // if button hasnt been chosen, disable it if wrong answer
-    if (!choice.disabled) {
-        
-        if(!isCorrect("choice3")) {
-            choice.disabled = true;
-        }
-        else {
-            correctAnswer()
-        }
-
-    }
-}
-
-// checks if choice4 is correct answer 
-function choice4Check() {
-    const choice = document.getElementById("choice4");
-    
-    // if button hasnt been chosen, disable it if wrong answer
-    if (!choice.disabled) {
-        
-        if(!isCorrect("choice4")) {
-            choice.disabled = true;
-        }
-        else {
-            correctAnswer()
-        }
-
-    }
-}
-
 // when a button is clicked, checks to see if the correct answer was chosen
 function isCorrect(buttonID) {
-    
+    const userChoice = document.getElementById(buttonID);
+
+    // if user choice === right answer, then run correct answer
+    if (buttonID === question.rightAnswer){
+        correctAnswer();
+    }
+
+    // if button hasnt been chosen, disable it if wrong answer
+    else if (!userChoice.disabled) {
+        userChoice.disabled = true;
+    }
 }
 
 // do some sort of animation or something when answer is correct
@@ -234,4 +177,6 @@ function correctAnswer() {
     // display "correct" message 
     // wait a few seconds, 
     // run loadNewQuestion()
+    alert("correct! :)");
+    loadNewQuestion();
 }

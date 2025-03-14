@@ -1,6 +1,6 @@
 class Question {
     // Private variables
-    #NUM_CHOICES;
+    #NUM_CHOICES = 4;
     #mainImagePath;
     #correctAnswerIndex; 
     #correctAnswerChordName;
@@ -8,11 +8,7 @@ class Question {
     #multipleChoice2 = [null, false];
     #multipleChoice3 = [null, false];
     #multipleChoice4 = [null, false];
-
-    // constructor
-    constructor() {
-        this.#NUM_CHOICES = 4;
-    }
+    #rightAnswer = null;
 
     // Setter methods
     setImagePath(imagePath) {
@@ -57,7 +53,7 @@ class Question {
         return this.#correctAnswerIndex;
     }
 
-    get setCorrectAnswerChordName() {
+    get correctAnswerChordName() {
         return this.#correctAnswerChordName;
     }
 
@@ -89,22 +85,32 @@ class Question {
         return this.#multipleChoice4[1];
     }
 
-    // member functions
+    get rightAnswer() {
+        return this.#rightAnswer;
+    }
 
-    // rightAnswer refers to the correct answer from within this class. eg- multipleChoice1,2,3,4. aka- this sets the correct answer of those 4 options. 
+    // member functions 
     setRightAnswer() {
 
-        if (this.#correctAnswerChordName === this.#multipleChoice1[0])
+        if (this.#correctAnswerChordName === this.#multipleChoice1[0]){
             this.#multipleChoice1[1] = true;
+            this.#rightAnswer = "choice1";
+        }
 
-        if (this.#correctAnswerChordName === this.#multipleChoice2[0])
+        else if (this.#correctAnswerChordName === this.#multipleChoice2[0]){
             this.#multipleChoice2[1] = true;
+            this.#rightAnswer = "choice2";
+        }
 
-        if (this.#correctAnswerChordName === this.#multipleChoice3[0])
+        else if (this.#correctAnswerChordName === this.#multipleChoice3[0]){
             this.#multipleChoice3[1] = true;
+            this.#rightAnswer = "choice3";
+        }
 
-        if (this.#correctAnswerChordName === this.#multipleChoice4[0])
+        else {
             this.#multipleChoice4[1] = true;
+            this.#rightAnswer = "choice4";
+        }
 
     }
 }

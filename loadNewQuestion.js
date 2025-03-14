@@ -63,19 +63,25 @@ chords.set("g_sharp_minor.png",     "G# Minor");
 
 /*EVERYTHING ABOVE THIS SHOULD BE MOVED TO A DIFFERENT FILE ********************************************************************************************************* */
 
+// constants 
+const MULTIPLE_CHOICE_MAX = 4;
+
 // runs when the practice chord page is reached. 
 document.addEventListener("DOMContentLoaded", function() {
     loadNewQuestion();
 });
 
+// instance of Question. As the functions run, this class gets updated with the information the functions generate. for example, question will hold the correct answer, image used for the app, multiple choice questions etc. 
+const question = new Question();
+
 // generates the new question
 function loadNewQuestion() {
 
     // generate random chord image and get the correct answer
-    const correctAnswerIndex = generateRandomChordImage();
+    generateRandomChordImage();
 
     // generate multiple choice answers
-    generateMultipleChoice(correctAnswerIndex);
+    generateMultipleChoice(question.correctAnswerIndex);
 }
 
 // generates random chord image and displays it on the page
@@ -85,8 +91,9 @@ function generateRandomChordImage() {
     const randomChord = chord_filepaths_root[randomIndex]; // Get the random image from the array
     document.getElementById('pianoImage').src = randomChord; // Update the image src 
     
-    let correctAnswerIndex = randomIndex;
-    return correctAnswerIndex;
+    // save path and correct answer in the question object
+    question.setImagePath(randomChord); 
+    question.setCorrectAnswerIndex(randomIndex); 
 }
 
 // updates multiple choice answers
@@ -106,20 +113,20 @@ function generateMultipleChoice(correctAnswerIndex) {
         if (!multipleChoices.includes(randomIndex))
             multipleChoices.push(randomIndex);
 
-        if (multipleChoices.length === 4)
+        if (multipleChoices.length === MULTIPLE_CHOICE_MAX)
             break;
     }
 
-    // shuffle the array (fisher-yates shuffle algorithm. web)
+    // shuffle the array (fisher-yates shuffle algorithm. web reference)
     for (let i = multipleChoices.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [multipleChoices[i], multipleChoices[j]] = [multipleChoices[j], multipleChoices[i]];
     }
 
-    // at this point we have the indexes. 
+    // at this point we have the indexes shuffled in an array. 
     // now we access the file paths to get the names of the chord
     let names = []; 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < MULTIPLE_CHOICE_MAX; i++) {
         
         // gets the name of the end of the filepath. eg, uses "a_minor.png" to get "A Minor"
         let key = chord_filepaths_root[multipleChoices[i]].split("/").pop();
@@ -130,15 +137,22 @@ function generateMultipleChoice(correctAnswerIndex) {
     // then assign the answers in the order of the shuffled array
     let choice1 = document.getElementById('choice1');
     choice1.textContent = names[0];
+    question.setMultipleChoice1(names[0]);
 
     let choice2 = document.getElementById('choice2');
     choice2.textContent = names[1];
+    question.setMultipleChoice2(names[1]);
 
     let choice3 = document.getElementById('choice3');
     choice3.textContent = names[2];
+    question.setMultipleChoice3(names[2]);
 
     let choice4 = document.getElementById('choice4');
     choice4.textContent = names[3];
+    question.setMultipleChoice4(names[3]);
+
+    // set the correct answer within the question object
+    question.setRightAnswer()
 }
 
 // checks if choice1 is correct answer 

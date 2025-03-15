@@ -7,8 +7,8 @@ p, h1, h2 {
 }
 
 img {
-    max-width: 100%; /* Ensures the image fits within the container */
-    height: auto; /* Maintains the aspect ratio */
+    max-width: 100%;
+    height: auto;
 }
 
 button {
@@ -17,3 +17,16 @@ button {
     margin-top: 20px;
     cursor: pointer;
   }
+
+.button-group-homepage {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+} 
+
+.homepage-titles {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}

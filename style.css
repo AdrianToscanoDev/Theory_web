@@ -9,6 +9,10 @@ body {
     background-color: darkolivegreen;
 }
 
+#options-pg {
+    padding-top: 1.5rem;
+}
+
 p, h1, h2 {
     color: white;
 }
@@ -28,10 +32,25 @@ button {
     cursor: pointer;
   }
 
+#title-button {
+    font-size: 3rem;
+    width: 50%;
+    height: 6rem;
+}
+
 #content-background {
     background-color: blue;
     width: 50%;
     min-height: 70vh;
+    border-radius: 1.5rem;
+}
+
+#content-background-chords1 {
+    display: flex;
+    justify-content: center;
+    background-color: blue;
+    width: 50%;
+    min-height: 95vh;
     border-radius: 1.5rem;
 }
 

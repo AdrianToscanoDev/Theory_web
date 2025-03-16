@@ -19,31 +19,44 @@ img {
 
 button {
     padding: 10px 20px;
+    width: 40%;
+    font-size: 30px;
+    border-radius: 17px;
     font-size: 15px;
     margin-top: 20px;
     cursor: pointer;
   }
 
+.button {
+    
+}
+
 #content-background {
     background-color: blue;
-    width: 90%;
-    height: 90%;
+    width: 50%;
+    height: 60%;
 }
 
 .button-group-homepage {
-    align-items: center;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     gap: 0.5rem;
 } 
 
-.page-title {
-
+#page-title-container {
+    background-color: red;
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    font-size: 3rem;
 }
 
-#page-subtitle{
+#page-subtitle-container{
+    background-color: red;
     text-align: center;
+    font-size: 2rem;
     padding: 0.5rem;
     margin: 0.5rem;
-    background-color: red;
 }

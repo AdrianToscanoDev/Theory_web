@@ -19,6 +19,7 @@ p, h1, h2 {
 
 hr {
     width: 85%;
+    margin-bottom: 1rem;
 }
 
 img {
@@ -35,6 +36,11 @@ button {
     margin-top: 20px;
     cursor: pointer;
   }
+
+label {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
 
 #title-button {
     font-size: 3rem;
@@ -93,30 +99,37 @@ button {
 .options-splitscreen-container {
     background-color: blanchedalmond;
     width: 90%;
-    height: 55vh;
+    height: 57vh;
     margin: 0.5rem;
     display: flex;
-
 }
 
 .options-title {
     text-align: center;
     font-size: 1.5rem;
+    margin: .8rem;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5);
+}
+
+.options-text {
+    color: blue;
+    padding-left: 1.3rem;
+    font-size: 1.6rem;
 }
 
 #major-options {
     background-color: red;
     width: 50%;
+    display: flex;
+    flex-direction: column;
 }
 
 #minor-options {
     background-color: peru;
     width: 50%;
-    justify-content: right;
-}
-
-
-input[type="checkbox"] {
-    accent-color: teal; 
-    transform: scale(1.5); 
+    display: flex;
+    flex-direction: column;
 }

@@ -17,6 +17,10 @@ p, h1, h2 {
     color: white;
 }
 
+hr {
+    width: 85%;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -86,13 +90,33 @@ button {
     margin: 0.5rem;
 }
 
-.options-splitscreen {
+.options-splitscreen-container {
+    background-color: blanchedalmond;
+    width: 90%;
+    height: 55vh;
+    margin: 0.5rem;
     display: flex;
+
 }
 
-/*
+.options-title {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#major-options {
+    background-color: red;
+    width: 50%;
+}
+
+#minor-options {
+    background-color: peru;
+    width: 50%;
+    justify-content: right;
+}
+
+
 input[type="checkbox"] {
     accent-color: teal; 
     transform: scale(1.5); 
 }
-*/

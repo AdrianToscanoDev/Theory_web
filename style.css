@@ -8,12 +8,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: darkolivegreen;
+    background-color: #27445D;
 }
 
 p, h1, h2 {
-    color: white;
+    color: #F6F8D5;
 }
+
 
 hr {
     width: 85%;
@@ -26,6 +27,7 @@ img {
 }
 
 button {
+    background-color: #EFE9D5;
     padding: 10px 20px;
     width: 40%;
     height: 10%;
@@ -33,6 +35,7 @@ button {
     border-radius: 17px;
     margin-top: 20px;
     cursor: pointer;
+    color: #205781;
   }
 
 label {
@@ -52,7 +55,7 @@ label {
 }
 
 #content-background {
-    background-color: blue;
+    background-color: #497D74;
     width: 50%;
     min-height: 70vh;
     border-radius: 1.5rem;

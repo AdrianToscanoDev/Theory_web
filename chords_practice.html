@@ -12,20 +12,24 @@
 
     <body>
 
-        <!--piano image -->
-        <div id="image-container">
-            <img id="pianoImage" src="images\empty_piano.png" alt="Piano Image" />
+        <div id="content-background-chordsPractice">
+            
+            <!--piano image -->
+            <div id="image-container">
+                <img id="pianoImage" src="images\empty_piano.png" alt="Piano Image" />
+            </div>
+    
+            <!--multiple choice answers-->
+            <div class="answers-container">
+                <button id="choice1" onclick="isCorrect(this.id)"> </button>
+                <button id="choice2" onclick="isCorrect(this.id)"> </button>
+                <button id="choice3" onclick="isCorrect(this.id)"> </button>
+                <button id="choice4" onclick="isCorrect(this.id)"> </button>
+            </div>
+            
+            <!--home button -->
+            <button id="home-button">Home</button>
         </div>
-
-        <!--multiple choice answers-->
-        <div class="answers-container">
-            <button id="choice1" onclick="isCorrect(this.id)"> </button>
-            <button id="choice2" onclick="isCorrect(this.id)"> </button>
-            <button id="choice3" onclick="isCorrect(this.id)"> </button>
-            <button id="choice4" onclick="isCorrect(this.id)"> </button>
-        </div>
-        
-        <button id="home-button">Home</button>
         
         <!-- Scripts-->
         <script src="chord_filepaths.js"></script>

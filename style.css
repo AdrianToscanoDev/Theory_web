@@ -36,7 +36,12 @@ button {
     margin-top: 20px;
     cursor: pointer;
     color: #205781;
-  }
+}
+button:hover {
+    background-color: #205781;
+    color: #EFE9D5;
+}
+
 
 label {
     padding: 1.5rem;

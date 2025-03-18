@@ -75,18 +75,25 @@ label {
     justify-content: center;
     align-items: center;
     width: 80%;
-    height: 70vh;
+    height: 100vh;
 }
 
 .answers-container {
     background-color: aqua;
-    width: 80%;
+    width: 50%;
+    height: 30%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 1rem;
     justify-content: center;
     align-items: center;
+    justify-items: center;
+    align-items: center;
+}
+.answers-container button {
+    height: 100px;
+    width: 120px;
 }
 
 .button-group-homepage {
@@ -155,7 +162,7 @@ input[type="checkbox"] {
 
 .nav-buttons-chords1 {
     /*background-color: red;*/
-    width: 90%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;

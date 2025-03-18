@@ -11,10 +11,6 @@ body {
     background-color: darkolivegreen;
 }
 
-#options-pg {
-    padding-top: 1.5rem;
-}
-
 p, h1, h2 {
     color: white;
 }
@@ -51,7 +47,7 @@ label {
 }
 
 .title-description {
-    font-size: 2rem;
+    font-size: 1.7rem;
     text-align: center;
 }
 
@@ -155,4 +151,16 @@ input[type="checkbox"] {
     width: 50%;
     display: flex;
     flex-direction: column;
+}
+
+.nav-buttons-chords1 {
+    /*background-color: red;*/
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-buttons-chords1 button {
+    width: 100px;
+    height: 50px;
 }

@@ -12,6 +12,9 @@ const question = new Question();
 // generates the new question
 function loadNewQuestion() {
 
+    // resets all buttons styling
+    resetButtons();
+
     // generate random chord image and get the correct answer
     generateRandomChordImage();
 
@@ -95,25 +98,31 @@ function generateMultipleChoice(correctAnswerIndex) {
 function isCorrect(buttonID) {
     const userChoice = document.getElementById(buttonID);
 
+    // choice correct
     if (buttonID === question.rightAnswer){
-        correctAnswer();
+        correctAnswer(userChoice);
     }
-
-    // if button hasnt been chosen, disable it if wrong answer
+    // choice wrong
     else if (!userChoice.disabled) {
-        userChoice.disabled = true;
+        wrongAnswer(userChoice)
     }
 }
 
-// do some sort of animation or something when answer is correct
-function correctAnswer() {
+// 
+function correctAnswer(userChoice) {
     // for now, turn the button green,
     // display "correct" message 
     // wait a few seconds, 
     // run loadNewQuestion()
     alert("correct! :)");
-    resetButtons();
     loadNewQuestion();
+}
+
+// updates button when choice is wrong
+function wrongAnswer(userChoice) {
+    userChoice.style.backgroundColor = 'red'
+    userChoice.style.opacity = '0.6'
+    userChoice.disabled = true;
 }
 
 function resetButtons() {

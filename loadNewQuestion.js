@@ -130,4 +130,13 @@ function resetButtons() {
     document.getElementById("choice2").disabled = false;
     document.getElementById("choice3").disabled = false;
     document.getElementById("choice4").disabled = false;
+    document.getElementById("choice1").style.backgroundColor = ''
+    document.getElementById("choice1").style.opacity = ''
+    document.getElementById("choice2").style.backgroundColor = ''
+    document.getElementById("choice2").style.opacity = ''
+    document.getElementById("choice3").style.backgroundColor = ''
+    document.getElementById("choice3").style.opacity = ''
+    document.getElementById("choice4").style.backgroundColor = ''
+    document.getElementById("choice4").style.opacity = ''
+    // this is a test line
 }

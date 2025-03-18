@@ -69,7 +69,7 @@ label {
 }
 
 #content-background-chordsPractice {
-    background-color: bisque;
+    background-color: blueviolet;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -168,6 +168,22 @@ input[type="checkbox"] {
     align-items: center;
 }
 .nav-buttons-chords1 button {
+    width: 100px;
+    height: 50px;
+}
+
+.home-button-container {
+    background-color: red;
+    display: flex;
+    margin-top: 3rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#home-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100px;
     height: 50px;
 }

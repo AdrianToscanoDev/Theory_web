@@ -138,4 +138,5 @@ function resetButtons() {
     document.getElementById("choice3").style.opacity = ''
     document.getElementById("choice4").style.backgroundColor = ''
     document.getElementById("choice4").style.opacity = ''
+    // this is a test line
 }
